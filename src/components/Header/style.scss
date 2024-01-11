@@ -1,0 +1,68 @@
+@import "../../variables";
+
+//Code for shared ul in the header
+.ul-shared {
+  display: flex;
+  list-style: none;
+  li {
+    margin: 0 1rem;
+    background-color: $color-green;
+    padding: 0.4rem 1.5rem;
+    border-radius: 15px;
+    scale: 1;
+    &:hover {
+      background-color: $color-orange;
+      scale: 1.08;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+    }
+  }
+}
+.styled-header {
+  display: flex;
+  width: 100%;
+  height: 8vh;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-grey;
+
+  .div-content {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+
+    .div-search {
+      display: flex;
+      align-items: center;
+        
+      .btn-search{
+        cursor: pointer;
+      }
+      input {
+        margin: 0 1rem;
+        border: none;
+        width: 20rem;
+        height: 2rem;
+        border-radius: 30px;
+        padding-left: 0.5rem;
+
+        &::placeholder {
+          text-align: center;
+        }
+
+      }
+
+      button {
+        background: transparent;
+        border: none;
+        font-size: 25px;
+        color: $color-orange;
+        font-weight: bold;
+      }
+    }
+  }
+}
