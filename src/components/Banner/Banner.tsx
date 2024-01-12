@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-
+import "./style.scss"
 interface BannerProps {
     link: StaticImageData,
     alt: string,
@@ -8,13 +8,15 @@ interface BannerProps {
 }
 function Banner({link, alt, width, height}: BannerProps) {
     return(
-        <Image 
-        src={link}
-        alt={alt}
-        width={width}
-        height={height}
-        layout="responsive"
-        />
+        <section className="sec-imgBanner">
+            <Image 
+            src={link}
+            alt={alt}
+            width={width}
+            height={height}
+            layout="responsive"
+            />
+        </section>
     )
 }
 export default Banner

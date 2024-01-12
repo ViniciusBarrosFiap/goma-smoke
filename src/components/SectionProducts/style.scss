@@ -1,0 +1,13 @@
+.section-products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    .div-products{
+        width: 85%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+    }
+}
