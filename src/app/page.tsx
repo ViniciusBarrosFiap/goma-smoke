@@ -6,6 +6,7 @@ import Logo from "@/components/Logo/page";
 import DivTitle from "@/components/SectionTitle/SectionTitle";
 import SectionProducts from "@/components/SectionProducts/SectionProducts";
 import Footer from "@/components/Footer/Footer";
+
 function Home(){
 
     return (

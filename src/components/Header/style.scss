@@ -64,5 +64,15 @@
         font-weight: bold;
       }
     }
+    .div-login{
+      display: flex;
+      align-items: center;
+      color: $color-orange;
+      svg{
+        margin-left: 1rem;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
   }
 }
