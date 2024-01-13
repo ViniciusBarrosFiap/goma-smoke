@@ -1,0 +1,31 @@
+@import "../../variables";
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: $color-grey;
+    height: 20vh;
+    .section-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        .div-infos{
+            .h2-footer{
+                color: white;
+            }
+            .ul-infos{
+                list-style: none;
+                color: white;
+                li{
+                    display: flex;
+                    align-items: center;
+                    svg{
+                        margin-right: 0.5rem;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

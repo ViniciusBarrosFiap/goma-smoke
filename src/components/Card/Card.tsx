@@ -15,7 +15,7 @@ function Card({ id, image, name, description, price }: CardProps) {
                 <div className="div-img">
                     <div className="img-inner">
                         <div className="inner-skew">
-                            <Image className="img-product" src={image.src} alt="" width={100} height={100} />
+                            <Image className="img-product" src={image.src} alt="" width={300} height={300} />
                         </div>
                     </div>
                 </div>

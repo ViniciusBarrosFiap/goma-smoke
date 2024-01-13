@@ -5,6 +5,7 @@ import imgBanner from "../img/Capa-GomaSkome.jpg"
 import Logo from "@/components/Logo/page";
 import DivTitle from "@/components/SectionTitle/SectionTitle";
 import SectionProducts from "@/components/SectionProducts/SectionProducts";
+import Footer from "@/components/Footer/Footer";
 function Home(){
 
     return (
@@ -14,6 +15,9 @@ function Home(){
             <Logo/>
             <DivTitle title="Destaques"/>
             <SectionProducts/>
+            <DivTitle title="Produtos"/>
+            <SectionProducts/>
+            <Footer/>
         </>
     )
 }
