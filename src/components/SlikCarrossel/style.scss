@@ -1,0 +1,25 @@
+.multiple-items{
+    overflow: hidden;
+    .header-slider{
+        margin-bottom: 6rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title-slickCarousel{
+            // margin-bottom: 4rem;
+            text-align: center;
+        }
+    }
+    .division-bar{
+        height: 5px;
+        background-color: orange;
+        width: 5%;
+        margin: 1rem 0 1rem 0;
+    }
+    .slick-slider{
+        .slick-list{
+            overflow:visible;
+        }
+    }
+}

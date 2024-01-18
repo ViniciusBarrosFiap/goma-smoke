@@ -1,9 +1,13 @@
 import Image from "next/image"
 import logo from "../../img/logo-goma.png"
 import "./style.scss"
-function Logo(){
+
+interface LogoProps{
+    className?: string;
+}
+function Logo({className} : LogoProps){
     return(
-        <div className="div-logo">
+        <div className={`div-logo ${className}`}>
             <Image
                 src={logo}
                 alt="Logotipo Goma"
