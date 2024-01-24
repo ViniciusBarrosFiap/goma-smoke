@@ -1,6 +1,10 @@
+import Logo from "@/components/Logo/page"
+
 function Login(){
     return(
-        <h1>Página de login</h1>
+        <>
+            <Logo className="div-logo--Top15"/>
+        </>
     )
 }
 export default Login
