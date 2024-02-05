@@ -4,9 +4,11 @@ import { MdExpandMore } from "react-icons/md";
 
 interface AccordionProps{
     title: string,
+    description: string,
+    titleForDescription: string
    
 }
-function Accordion({title}:AccordionProps){
+function Accordion({title, description, titleForDescription}:AccordionProps){
     const [accordionIsVisible, setIsVisible] = useState<boolean>(false);
     const handleAccordionClick = () => {
         setIsVisible(!accordionIsVisible);
@@ -21,7 +23,8 @@ function Accordion({title}:AccordionProps){
                 <div className="info-box">
                     <div className="product-infos">
                         <h4>{title}</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure assumenda libero ducimus soluta dolorum illo culpa voluptatem neque distinctio velit et eveniet illum adipisci mollitia dolores, accusantium corporis inventore expedita!</p>
+                        <h2>{titleForDescription}</h2>
+                        <p>{description}</p>
                     </div>
                 </div>
             </div>

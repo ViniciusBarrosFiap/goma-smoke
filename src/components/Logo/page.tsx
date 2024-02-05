@@ -7,13 +7,15 @@ interface LogoProps{
 }
 function Logo({className} : LogoProps){
     return(
-        <div className={`div-logo ${className}`}>
-            <Image
-                src={logo}
-                alt="Logotipo Goma"
-                width={370}
-            />
-        </div>
+        <section className="secLogo">
+            <div className={`div-logo ${className}`}>
+                <Image
+                    src={logo}
+                    alt="Logotipo Goma"
+                    width={370}
+                />
+            </div>
+        </section>
     )
 }
 export default Logo

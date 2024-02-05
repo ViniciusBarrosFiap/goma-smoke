@@ -1,0 +1,12 @@
+@import "../../variables";
+
+.formLogin{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .div-inputs{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+    }
+}
