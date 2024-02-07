@@ -1,12 +1,41 @@
 @import "../../variables";
-
-.formLogin{
+.section-main-login{
     width: 100%;
     display: flex;
     justify-content: center;
-    .div-inputs{
-        width: 30%;
-        display: flex;
-        flex-direction: column;
+    .div-form{
+        height: 38vh;
+        width: 40%;
+        border-radius: 30px;
+        padding: 1.5rem;
+        margin-top: 5rem;
+        box-shadow: 0px 0px 24px 9px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+        .formLogin{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .div-inputs{
+                display: flex;
+                height: 90%;
+                flex-direction: column;
+                justify-content:space-between;
+                align-items: center;
+            }
+            .div-optionsLogin{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding:1em;
+                a{
+                    text-decoration: underline;
+                    color: black;
+                }
+                .signup-option{
+                    color: $color-green;
+                }
+            }
+            
+        }
     }
 }
