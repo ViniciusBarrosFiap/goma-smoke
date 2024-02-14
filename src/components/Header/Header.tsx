@@ -33,7 +33,7 @@ function Header(){
                 <div className="div-login">
                     <ul className="ul-shared">
                         <li><Link href={"/login"}>Entrar</Link></li>
-                        <li><Link href={"/criar"}>Criar conta</Link></li>
+                        <li><Link href={"/signup"}>Criar conta</Link></li>
                     </ul>
                     <FaShoppingCart onClick={toggleCart}/>
                 </div>
