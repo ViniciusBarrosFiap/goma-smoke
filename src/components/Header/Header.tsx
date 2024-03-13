@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link"
 import "./style.scss"
-import { FaSearch } from "react-icons/fa";
+import { FaBars, FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { useState } from "react";
@@ -15,6 +15,9 @@ function Header(){
     return (
         <header className="styled-header">
             <div className="div-content">
+                <div className="menu-mobile">
+                    <FaBars/>
+                </div>
                 <div className="div-options">
                     <ul className="ul-shared">
                         <li><Link href={"/"}>Home</Link></li>

@@ -1,10 +1,12 @@
 .secLogo{
     height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .div-logo{
-    position: absolute;
-    left: 40%;
-    top:40%;
+    display: flex;
+    align-items: center;
 }
 
 .div-logo--Top15{

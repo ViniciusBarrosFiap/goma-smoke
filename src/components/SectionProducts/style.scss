@@ -1,13 +1,21 @@
 .section-products{
-    width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
     margin-top: 7rem;
     .div-products{
-        width: 85%;
         display: flex;
-        justify-content: space-between;
+        width: 85%;
         flex-wrap: wrap;
-
+        justify-content: space-between;
+        @media (max-width: 1484px) {
+            width: 90%;
+        }
+        @media (max-width: 1335px) {
+            width: 95%;
+            flex-direction: column;
+            align-items: center;
+        }
+        
     }
 }

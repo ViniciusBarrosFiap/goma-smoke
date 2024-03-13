@@ -59,6 +59,13 @@ function SectionProducts(){
             description:"This is product one.",
             price:20.50
         },
+        {
+            id:4,
+            image: produto,
+            name:"Product 4",
+            description:"This is product one.",
+            price:20.50
+        },
 
     ]
     return(
