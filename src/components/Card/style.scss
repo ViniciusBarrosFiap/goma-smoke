@@ -2,28 +2,14 @@
 
 
 .card-product {
-  flex-basis: calc(25% - 50px); 
+  // width: 20%;
   margin: 0 10px 7rem;
   display: flex;
   justify-content: center;
   transition: transform 0.3s ease;
   transform: scale(1);
-  @media(max-width: 1335px){
-    flex-basis: calc(25% - 20px); 
-    margin: 0 10px 20px;
-  }
-  @media(max-width: 1335px){
-    flex-basis: calc(33.33% - 20px);
-  }
-  
   a{
     text-decoration: none;
-    @media(max-width:1330px){
-      max-height: 200px;
-    }
-    @media(max-width:1165px){
-      max-height: 150px;
-    }
   }
 
   &:hover{
@@ -36,10 +22,6 @@
       height: 300px;
       width: 300px;
       margin: -7rem 0px -2rem 0px;
-    }
-    .inner-skew {
-      display: inline-block;
-      border-radius: 20px;    
     }
   }
   .div-infos{

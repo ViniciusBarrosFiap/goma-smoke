@@ -54,6 +54,9 @@
     }
     .menu-mobile{
       display: none;
+      color: $color-orange;
+      font-size: 25px;
+      cursor: pointer;
       @media(max-width:920px) {
         display: block;
       }

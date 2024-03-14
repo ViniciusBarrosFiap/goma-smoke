@@ -5,18 +5,23 @@ import { FaBars, FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { useState } from "react";
+import MenuMobile from "../MenuMobile/page";
 
 function Header(){
     const [cartDisplay, setCartDisplay] = useState("none");
-
+    const [menuMobile, setMenuMobile] = useState("none")
     const toggleCart = () => {
         setCartDisplay((prevDisplay) => (prevDisplay === "block" ? "none" : "block"));
       };
+    const toggleMenu = () =>{
+        setMenuMobile((prevDisplay) => (prevDisplay === "block" ? "none" : "block"));
+    }
     return (
         <header className="styled-header">
+            <MenuMobile display={menuMobile} onToggleMenu={toggleMenu}/> 
             <div className="div-content">
                 <div className="menu-mobile">
-                    <FaBars/>
+                    <FaBars onClick={toggleMenu} />
                 </div>
                 <div className="div-options">
                     <ul className="ul-shared">

@@ -4,17 +4,19 @@
     width: 100%;
     margin-top: 7rem;
     .div-products{
+        width: 80%;
         display: flex;
-        width: 85%;
         flex-wrap: wrap;
         justify-content: space-between;
         @media (max-width: 1484px) {
             width: 90%;
         }
-        @media (max-width: 1335px) {
-            width: 95%;
-            flex-direction: column;
-            align-items: center;
+        @media (max-width:1055px){
+            width: 80%;
+        }
+        @media (max-width:790px){
+            width: 90%;
+            justify-content: center;
         }
         
     }
