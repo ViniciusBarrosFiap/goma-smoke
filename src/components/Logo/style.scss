@@ -12,3 +12,12 @@
 .div-logo--Top15{
     top:15%
 }
+
+.div-logo--Mobile{
+    img{
+        @media(max-width:500px){
+            width:270px;
+            height: 160px
+        }
+    }
+}

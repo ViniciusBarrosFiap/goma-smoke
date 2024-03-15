@@ -10,6 +10,10 @@
     top: 0;
     background: $color-lightGrey;
     z-index: 1000;
+    border-top-left-radius: 30px;
+    @media(max-width:500px){
+      width: 15rem;
+    }
     svg{
         color: black;
         cursor: pointer;

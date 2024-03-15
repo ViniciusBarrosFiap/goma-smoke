@@ -11,5 +11,11 @@
         padding: 1em;
         border-radius: 30px;
         border: 1px solid black;
+        @media(max-width:595px){
+            width: 400px;
+        }
+        @media(max-width:460px){
+            width: 350px;
+        }
     }
 }

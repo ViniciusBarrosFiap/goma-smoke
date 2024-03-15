@@ -3,7 +3,6 @@
 //Code for shared ul in the header
 .ul-shared {
   display: flex;
-  list-style: none;
   li {
     margin: 0 1rem;
     padding: 0.4rem 1.5rem;
@@ -15,7 +14,6 @@
       scale: 1.08;
     }
     a {
-      text-decoration: none;
       color: white;
       font-size: 20px;
       @media(max-width:1374px) {

@@ -5,11 +5,12 @@ import SectionProducts from "@/components/SectionProducts/SectionProducts"
 import Footer from "@/components/Footer/Footer"
 import Banner from "@/components/Banner/Banner"
 import logoBanner from "../../img/Banner-logo.png"
+import Logo from "@/components/Logo/page"
 function Produtos(){
     return (
         <>
             <Header/>
-            <Banner link={logoBanner} alt="Logo goma" width={100} height={100}/>
+            <Logo/>
             <SectionTitle title="Todos nossos produtos"/>
             <SectionProducts />
             <Footer/>
