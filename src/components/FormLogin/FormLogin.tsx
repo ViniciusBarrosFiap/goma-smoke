@@ -3,28 +3,44 @@ import Link from "next/link";
 import ButtonProductId from "../Buttons/ButtonProductId";
 import InputForm from "../InputForm/InputForm";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import http from "../../http/index";
 import "./style.scss"
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 function FormLogin(){
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
+    const [token, setToken] = useState<string>('')
     const handleChange = (e: any) =>{
         const target = e.target as HTMLInputElement;
-        console.log(target)
-        const {name, value} = target;
-        if(name === 'email') {
-            console.log("dentro da func:",value)
+        const {type, value} = target;
+        if(type === 'email') {
             setEmail(value)
         }
-        else if (name === 'password'){
+        else if (type === 'password'){
             setPassword(value)
         }
-
     }
-    useEffect(() => {
-        console.log('Email:', email)
-        console.log("senha", password)
-    },[email, password])
+    const signIn = () => {
+        const credentials = {
+            "email": email,
+            "password": password
+        }
+        http.post('authentication/login', credentials)
+        .then(response => {
+            setToken(response.data.access_token)
+            if(response.status == 201) {
+                return (
+                    <h1>Login feito com sucesso</h1>
+                )
+            }
+        })
+        .catch((error) => {
+            return (
+                <h1>Erro ao realizar o login</h1>
+            )
+        })
+    }
     return(
         <>
             <SectionTitle title="Login"/>
@@ -40,7 +56,7 @@ function FormLogin(){
                             <Link className="signup-option" href={"/signup"}>Cadastre-se</Link>
                         </div>
                         <div className="div-loginBtn">
-                            <ButtonProductId action="Entrar" color="orange"/>
+                            <ButtonProductId action="Entrar" onClick={()=>signIn()} color="orange"/>
                         </div>
                     </form>
                 </div>    
