@@ -4,11 +4,27 @@ import ButtonProductId from "../Buttons/ButtonProductId";
 import InputForm from "../InputForm/InputForm";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import "./style.scss"
+import { useEffect, useState } from "react";
 function FormLogin(){
+    const [email, setEmail] = useState<string>('')
+    const [password, setPassword] = useState<string>('')
+    const handleChange = (e: any) =>{
+        const target = e.target as HTMLInputElement;
+        console.log(target)
+        const {name, value} = target;
+        if(name === 'email') {
+            console.log("dentro da func:",value)
+            setEmail(value)
+        }
+        else if (name === 'password'){
+            setPassword(value)
+        }
 
-    const handleChange : React.ChangeEventHandler<HTMLInputElement> = (e) =>{
-        console.log(e.target.value)
     }
+    useEffect(() => {
+        console.log('Email:', email)
+        console.log("senha", password)
+    },[email, password])
     return(
         <>
             <SectionTitle title="Login"/>
@@ -16,8 +32,8 @@ function FormLogin(){
                 <div className="div-form">
                     <form action="" className="formLogin">
                         <div className="div-inputs">
-                            <InputForm label="Email" placeholder="Email" type="email" onChange={handleChange}/>
-                            <InputForm label="Senha" placeholder="Senha" type="password" onChange={handleChange}/>
+                            <InputForm label="Email"  type="email" onBlur={handleChange}/>
+                            <InputForm label="Senha"  type="password" onBlur={handleChange}/>
                         </div>
                         <div className="div-optionsLogin">
                             <Link href={"/"}>Esqueci minha senha</Link>

@@ -1,15 +1,15 @@
-import "./style.scss";
+// import "./style.scss";
+import './style.css'
 interface InputFormProps{
     label:string,
-    placeholder: string,
-    type: string,
-    onChange:  React.ChangeEventHandler<HTMLInputElement> 
+    type:string,
+    onBlur:  React.ChangeEventHandler<HTMLInputElement> 
 }
-function InputForm({label, placeholder,type, onChange} : InputFormProps){
+function InputForm({label, type, onBlur}: InputFormProps){
     return(
-        <div className="div-input">
-            <label className="labelInput" htmlFor="input">{label}</label>
-            <input className="input" name="input" type={type} placeholder={placeholder} onChange={onChange}/>
+        <div className="input-group">
+            <input type={type} required name="text" autoComplete="off" className="input"  onBlur={onBlur}/>
+            <label className="user-label">{label}</label>
         </div>
     )
 }

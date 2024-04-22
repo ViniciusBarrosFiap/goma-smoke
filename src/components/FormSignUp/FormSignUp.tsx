@@ -15,18 +15,18 @@ function FormSignUp() {
                 <div className="div-form">
                     <form action="" className="formLogin">
                         <div className="div-inputs">
-                            <InputForm label="Nome" placeholder="Nome" type="text" onChange={handleChange}/>
-                            <InputForm label="Email" placeholder="Email" type="email" onChange={handleChange}/>
-                            <InputForm label="Senha" placeholder="Senha" type="password" onChange={handleChange}/>
-                            <InputForm label="CPF" placeholder="Digite seu CPF" type="text" onChange={handleChange}/>
-                            <InputForm label="Telefone" placeholder="Telefone" type="text" onChange={handleChange}/>
-                            <InputForm label="" placeholder="Telefone" type="text" onChange={handleChange}/>
+                            <InputForm label="Nome"  type="text" onChange={handleChange}/>
+                            <InputForm label="Email"  type="email" onChange={handleChange}/>
+                            <InputForm label="Senha"  type="password" onChange={handleChange}/>
+                            <InputForm label="CPF"  type="text" onChange={handleChange}/>
+                            <InputForm label="Telefone" type="text" onChange={handleChange}/>
+                            <InputForm label="Data de nascimento" type="text" onChange={handleChange}/>
                         </div>
                         <div className="div-optionsLogin">
                             <Link href={"/login"}>Fazer login</Link>
                         </div>
                         <div className="div-loginBtn">
-                            <ButtonProductId action="Criar conta" color="green" />
+                            <ButtonProductId action="Criar conta" color="green" type="submit"/>
                         </div>
 
                     </form>
