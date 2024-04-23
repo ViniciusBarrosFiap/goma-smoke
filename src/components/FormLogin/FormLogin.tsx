@@ -5,12 +5,25 @@ import InputForm from "../InputForm/InputForm";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import http from "../../http/index";
 import "./style.scss"
-import { useState } from "react";
+import { setCookie, parseCookies, destroyCookie } from 'nookies';
+import { useEffect, useState } from "react";
 
 function FormLogin(){
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
-    const [token, setToken] = useState<string>('')
+    const [loggedIn, setLoggedIn] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(true);
+    
+    useEffect(() => {
+        const cookies = parseCookies();
+        const token = cookies.token;
+        if (token) {
+           setLoggedIn(true);
+           setLoading(false)
+        } else {
+            setLoading(false);
+        }
+    }, []);
     const handleChange = (e: any) =>{
         const target = e.target as HTMLInputElement;
         const {type, value} = target;
@@ -21,6 +34,7 @@ function FormLogin(){
             setPassword(value)
         }
     }
+
     const signIn = () => {
         const credentials = {
             "email": email,
@@ -28,18 +42,33 @@ function FormLogin(){
         }
         http.post('authentication/login', credentials)
         .then(response => {
-            setToken(response.data.access_token)
             if(response.status == 201) {
-                return (
-                    <h1>Login feito com sucesso</h1>
-                )
+                const token = response.data.access_token
+                setCookie(null, 'token', token, {
+                    maxAge: 3600,
+                    path: '/'
+                })
             }
+            setLoggedIn(true);
         })
-        .catch((error) => {
-            return (
-                <h1>Erro ao realizar o login</h1>
-            )
+        .catch(() => {
+            console.error("Erro ao realizar o login")
         })
+    }
+    const handdleLogout = () => {
+        destroyCookie(null, 'token')
+        setLoggedIn(false);
+    }
+    if (loading) {
+        return <div>Carregando...</div>;
+    }
+    if (loggedIn) {
+        return (
+            <>
+                <p>Você está logado</p>
+                <button onClick={handdleLogout}></button>
+            </>
+        )
     }
     return(
         <>

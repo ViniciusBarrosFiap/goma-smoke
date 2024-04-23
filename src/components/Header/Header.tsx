@@ -7,7 +7,11 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { useState } from "react";
 import MenuMobile from "../MenuMobile/page";
 
-function Header(){
+interface HeaderProps {
+    isLoggedIn: boolean;
+}
+
+function Header({isLoggedIn}: HeaderProps){
     const [cartDisplay, setCartDisplay] = useState("none");
     const [menuMobile, setMenuMobile] = useState("none")
     const toggleCart = () => {
@@ -39,10 +43,18 @@ function Header(){
                 </div>
 
                 <div className="div-login">
-                    <ul className="ul-shared">
-                        <li><Link href={"/login"}>Entrar</Link></li>
-                        <li><Link href={"/signup"}>Criar conta</Link></li>
+                    {isLoggedIn ? (
+                        <ul className="ul-shared">
+                        <li><Link href={"/login"}>conta</Link></li>
+                        <li><Link href={"/login"}>pedidos</Link></li>
                     </ul>
+                    ) : (
+                        <ul className="ul-shared">
+                            <li><Link href={"/login"}>Entrar</Link></li>
+                            <li><Link href={"/signup"}>Criar conta</Link></li>
+                        </ul>
+                        
+                    )}
                     <FaShoppingCart onClick={toggleCart}/>
                 </div>
             </div>
