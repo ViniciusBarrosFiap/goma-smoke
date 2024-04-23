@@ -7,6 +7,7 @@ import http from "../../http/index";
 import "./style.scss"
 import { setCookie, parseCookies, destroyCookie } from 'nookies';
 import { useEffect, useState } from "react";
+import { checkToken } from "@/utils/verify-jwt";
 
 function FormLogin(){
     const [email, setEmail] = useState<string>('')
@@ -17,6 +18,7 @@ function FormLogin(){
     useEffect(() => {
         const cookies = parseCookies();
         const token = cookies.token;
+        checkToken(token)
         if (token) {
            setLoggedIn(true);
            setLoading(false)
