@@ -10,7 +10,6 @@ function Login(){
     const [loggedIn, setLoggedIn] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
     const [userType, setUserType] = useState(null)
-
     useEffect(() => {
         const cookies = parseCookies()
         const token = cookies.token;
@@ -18,9 +17,9 @@ function Login(){
         if (token) {
             const payload = checkToken(token);
             if (payload && typeof payload === 'object' && 'userType' in payload) {
+                setLoggedIn(true)
                 setUserType(payload.userType)
             }
-            setLoggedIn(true)
         }
         setLoading(false);
     }, [])

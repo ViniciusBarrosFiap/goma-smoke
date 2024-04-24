@@ -5,6 +5,7 @@
     justify-content: center;
     background: $color-grey;
     box-sizing: content-box;
+    padding: 1rem 0rem 1rem 0;
     @media (max-width: 540px){
         min-height: 30vh;
     }

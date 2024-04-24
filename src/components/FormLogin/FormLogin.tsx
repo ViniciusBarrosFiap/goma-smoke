@@ -14,6 +14,7 @@ function FormLogin(){
     const [password, setPassword] = useState<string>('')
     const [loggedIn, setLoggedIn] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string>("")
     
     useEffect(() => {
         const cookies = parseCookies();
@@ -52,15 +53,17 @@ function FormLogin(){
                 })
             }
             setLoggedIn(true);
+            window.location.href = '/conta';
         })
-        .catch(() => {
-            console.error("Erro ao realizar o login")
+        .catch((error) => {
+            setError(error.response.data.message)
         })
     }
     const handdleLogout = () => {
         destroyCookie(null, 'token')
         setLoggedIn(false);
     }
+
     if (loading) {
         return <div>Carregando...</div>;
     }
@@ -78,6 +81,11 @@ function FormLogin(){
             <section className="section-main-login">
                 <div className="div-form">
                     <form action="" className="formLogin">
+                        {error != "" ? (
+                            <div>
+                                <p style={{color:"red"}}>{error}</p>
+                            </div>
+                        ): ""}
                         <div className="div-inputs">
                             <InputForm label="Email"  type="email" onBlur={handleChange}/>
                             <InputForm label="Senha"  type="password" onBlur={handleChange}/>
