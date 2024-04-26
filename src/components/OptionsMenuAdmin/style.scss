@@ -1,0 +1,25 @@
+@import '../../variables';
+.box-option-admin{
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+        text-decoration: none;
+    }
+    .option-menu-admin{
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 3px solid $color-orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        scale: 1;
+        cursor: pointer;
+        &:hover{
+            scale: 1.05;
+        }
+    }
+}

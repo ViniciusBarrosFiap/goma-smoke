@@ -4,6 +4,8 @@ import { checkToken } from "@/utils/verify-jwt";
 import { parseCookies } from "nookies";
 import { useEffect, useState } from "react";
 import "../../global.scss"
+import Logo from "@/components/Logo/page";
+import DivTitle from "@/components/SectionTitle/SectionTitle";
 
 function Conta() {
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
@@ -27,7 +29,15 @@ function Conta() {
         return <div>Carregando...</div>;
     }
     return(
-        <Header isLoggedIn={loggedIn} userType={userType}/>
+        <>
+            <Header isLoggedIn={loggedIn} userType={userType}/>
+            <Logo className='div-logo div-logo--Top15'/>
+            <DivTitle title="Conta"/>
+            
+
+        </>
+
+
     )
 }
 export default Conta

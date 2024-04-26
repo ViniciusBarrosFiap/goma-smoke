@@ -15,17 +15,20 @@ function FormLogin(){
     const [loggedIn, setLoggedIn] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("")
+    const [userType, setUserType] = useState(null)
     
     useEffect(() => {
         const cookies = parseCookies();
         const token = cookies.token;
         checkToken(token)
         if (token) {
-           setLoggedIn(true);
-           setLoading(false)
-        } else {
-            setLoading(false);
+            const payload = checkToken(token);
+            if (payload && typeof payload === 'object' && 'userType' in payload) {
+                setUserType(payload.userType)
+            }
+            setLoggedIn(true)
         }
+        setLoading(false);
     }, []);
     const handleChange = (e: any) =>{
         const target = e.target as HTMLInputElement;
@@ -52,8 +55,13 @@ function FormLogin(){
                     path: '/'
                 })
             }
+            if (userType == 'user') {
+                window.location.href = '/conta';
+            }else if ( userType == 'admin') {
+                window.location.href = '/dashboard-admin';
+
+            }
             setLoggedIn(true);
-            window.location.href = '/conta';
         })
         .catch((error) => {
             setError(error.response.data.message)

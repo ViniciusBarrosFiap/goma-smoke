@@ -52,7 +52,7 @@ function Header({isLoggedIn, userType}: HeaderProps){
                     <ul className="ul-shared">
                         {userType === 'admin' && (
                         <>
-                            <li><Link href={"/dashboard"}>Dashboard</Link></li>
+                            <li><Link href={"/dashboard-admin"}>Dashboard</Link></li>
                             <li><Link href={"/"} onClick={handdleLogout}>Sair</Link></li>
                         </>
                         )}

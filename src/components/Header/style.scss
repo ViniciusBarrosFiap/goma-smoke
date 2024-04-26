@@ -15,7 +15,7 @@
     }
     a {
       color: white;
-      font-size: 20px;
+      font-size: 16px;
       @media(max-width:1374px) {
         font-size: 15px;
       }
@@ -63,14 +63,13 @@
     .div-search {
       display: flex;
       align-items: center;
-      
       .btn-search{
         cursor: pointer;
       }
       input {
         margin: 0 1rem;
         border: none;
-        width: 15rem;
+        width: 20rem;
         height: 2rem;
         border-radius: 30px;
         padding-left: 0.5rem;
@@ -96,15 +95,23 @@
         font-weight: bold;
       }
     }
+    .div-cart{
+      svg{
+        font-size: 30px;
+      }
+      &:hover{
+        color: $color-orange
+      }
+    }
     .div-login{
       display: flex;
       align-items: center;
       color: $color-orange;
+      }
       svg{
-        margin-left: 1rem;
+        // margin-left: 1rem;
         font-size: 25px;
         cursor: pointer;
       }
-    }
   }
 }
