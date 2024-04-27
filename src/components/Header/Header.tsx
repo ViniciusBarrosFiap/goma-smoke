@@ -58,7 +58,7 @@ function Header({isLoggedIn, userType}: HeaderProps){
                         )}
                         {userType !== 'admin' && (
                         <>
-                            <li><Link href={"/login"}>conta</Link></li>
+                            <li><Link href={"/conta"}>conta</Link></li>
                             <li><Link href={"/login"}>pedidos</Link></li>
                         </>
                         )}

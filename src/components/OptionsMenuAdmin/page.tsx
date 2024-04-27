@@ -1,23 +1,20 @@
 import Image from "next/image";
-import Link from "next/link";
 import './style.scss';
 interface OptionsMenuAdminProps {
     src: string;
-    href: string;
     title: string;
+    onClick: () => void;
 }
-function OptionsMenuAdmin({src, href, title}: OptionsMenuAdminProps) {
+function OptionsMenuLogged({ src, title, onClick }: OptionsMenuAdminProps) {
     return (
         <div className="box-option-admin">
-            <Link href={href}>
-                <div className="option-menu-admin">
-                    <Image priority src={src} alt="" height={75} width={75} />
-                </div>
-            </Link>
+            <div className="option-menu-admin" onClick={onClick}>
+                <Image priority src={src} alt="" height={75} width={75} />
+            </div>
             <div>
                 <h3>{title}</h3>
             </div>
-        </div>    
+        </div>
     )
 }
-export default OptionsMenuAdmin
+export default OptionsMenuLogged
