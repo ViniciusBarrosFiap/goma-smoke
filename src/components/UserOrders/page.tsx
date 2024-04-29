@@ -3,8 +3,9 @@ import "../../../_styles.scss"
 import "./style.scss"
 import http from "@/http";
 import { parseCookies } from "nookies";
+import RowTableOrder from "../RowTableOrders/page";
 function UserOrders() {
-    const [userOrders, setUserOrders] = useState(null);
+    const [userOrders, setUserOrders] = useState([]);
     useEffect(() => {
         const cookies = parseCookies()
         const token = cookies.token;
@@ -13,7 +14,8 @@ function UserOrders() {
         }
         http.get('orders', config)
             .then((res) => {
-                console.log(res)
+                // console.log(res.data)
+                setUserOrders(res.data)
             })
             .catch((erro) => {
                 console.log(erro)
@@ -33,16 +35,9 @@ function UserOrders() {
                         <h3>Detalhes</h3>
                     </div>
                     <div className="sepator-line"></div>
-                    <div className="div-rows">
-                        <div className="rows-order-table">
-                            <h4>#001</h4>
-                            <h4>27/04/2024 - PM12:00:00</h4>
-                            <h4>Vinicius Oliveira de Barros</h4>
-                            <h4>Pendente</h4>
-                            <h4>R$ 150,00</h4>
-                            <h4>Ver mais</h4>
-                        </div>
-                    </div>
+                    {userOrders.map(({id, amount, createdAt, status, user.name}) => (
+                        <RowTableOrder orderNum={id}/>
+                    ))}
                 </div>
             </div>
         </section>

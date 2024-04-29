@@ -18,27 +18,4 @@
         margin-top: 5px; 
         margin-bottom: 5px; 
     }
-    .div-rows{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        .rows-order-table {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            h4{
-                flex: 1;
-                max-width: 300px;
-                text-align: center; 
-                &:nth-child(6) {
-                    text-decoration: underline;
-                    cursor: pointer;
-                    &:hover{
-                        color: $color-orange;
-                    }
-                }
-            }
-        }
-
-    }
 }
