@@ -8,10 +8,12 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        h4{
+        p{
             flex: 1;
             max-width: 300px;
-            text-align: center; 
+            text-align: center;
+            align-self: center;
+            font-weight: 500;
             &:nth-child(6) {
                 text-decoration: underline;
                 cursor: pointer;

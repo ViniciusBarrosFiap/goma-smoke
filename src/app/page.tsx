@@ -8,6 +8,7 @@ import Footer from "@/components/Footer/Footer";
 import { useEffect, useState } from "react";
 import {parseCookies} from 'nookies';
 import { checkToken } from "@/utils/verify-jwt";
+import Loader from "@/components/Loader/page";
 function Home(){
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
     const [loading, setLoading] = useState<boolean>(true)
@@ -25,7 +26,7 @@ function Home(){
         setLoading(false);
     }, [])
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     return (
         <>

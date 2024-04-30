@@ -15,6 +15,7 @@ import DashboardAdmin from '@/components/DashboardAdmin/page';
 import ProductsAdmin from '@/components/ProductsAdmin/page';
 import OrdersAdmin from '@/components/OrdersAdmin/page';
 import NotFound from '@/components/NotFound/page';
+import Loader from '@/components/Loader/page';
 function Dashboard() {
     const [loggedIn, setLoggedIn] = useState<boolean>(false);
     const [userType, setUserType] = useState(null);
@@ -33,7 +34,7 @@ function Dashboard() {
         setLoading(false);
     }, [])
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     const handlerPageSelect = (page: string) => {
         setPageSelect(page);

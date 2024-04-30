@@ -8,6 +8,7 @@ import "./style.scss"
 import { setCookie, parseCookies, destroyCookie } from 'nookies';
 import { useEffect, useState } from "react";
 import { checkToken } from "@/utils/verify-jwt";
+import Loader from "../Loader/page";
 
 function FormLogin(){
     const [email, setEmail] = useState<string>('')
@@ -73,7 +74,7 @@ function FormLogin(){
     }
 
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     if (loggedIn) {
         return (

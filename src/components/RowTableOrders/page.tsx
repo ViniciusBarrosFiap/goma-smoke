@@ -6,20 +6,16 @@ export interface RowTableOrderProps {
     status?: string;
     amount?: number;
 }
-function RowTableOrder({ orderNum = "",
-    date = "",
-    user = "",
-    status = "",
-    amount = 0 }: RowTableOrderProps) {
+function RowTableOrder({ orderNum,date,user,status,amount }: RowTableOrderProps) {
     return (
         <div className="div-rows">
             <div className="rows-order-table">
-                <h4>#{orderNum}</h4>
-                <h4>{date}</h4>
-                <h4>{user}</h4>
-                <h4>{status}</h4>
-                <h4>{amount}</h4>
-                <h4>Ver mais</h4>
+                <p>#{orderNum}</p>
+                <p>{date}</p>
+                <p>{user}</p>
+                <p>{status}</p>
+                <p>R$ {amount}</p>
+                <p>Ver mais</p>
             </div>
         </div>
     )

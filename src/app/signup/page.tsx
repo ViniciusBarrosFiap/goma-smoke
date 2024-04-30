@@ -6,6 +6,7 @@ import FormSignUp from "@/components/FormSignUp/FormSignUp"
 import { useEffect, useState } from "react"
 import {parseCookies} from 'nookies';
 import { checkToken } from "@/utils/verify-jwt"
+import Loader from "@/components/Loader/page"
 function Signup(){
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
     const [loading, setLoading] = useState<boolean>(true)
@@ -25,7 +26,7 @@ function Signup(){
         setLoading(false);
     }, [])
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     return (
         <>

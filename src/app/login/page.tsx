@@ -6,6 +6,7 @@ import "../../global.scss"
 import { useEffect, useState,  } from "react"
 import {parseCookies} from 'nookies';
 import { checkToken } from "@/utils/verify-jwt"
+import Loader from "@/components/Loader/page"
 function Login(){
     const [loggedIn, setLoggedIn] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
@@ -24,7 +25,7 @@ function Login(){
         setLoading(false);
     }, [])
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     return(
         <>

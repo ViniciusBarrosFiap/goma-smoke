@@ -5,6 +5,7 @@ import "../../global.scss"
 import {parseCookies} from 'nookies';
 import { useEffect, useState } from "react";
 import { checkToken } from "@/utils/verify-jwt";
+import Loader from "@/components/Loader/page";
 
 function Contato(){
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
@@ -24,7 +25,7 @@ function Contato(){
         setLoading(false);
     }, [])
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     return(
         <>

@@ -12,6 +12,7 @@ import userIcon from '../../img/userIcon.svg'
 import './style.scss'
 import NotFound from "@/components/NotFound/page";
 import UserOrders from "@/components/UserOrders/page";
+import Loader from "@/components/Loader/page";
 function Conta() {
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
     const [userType, setUserType] = useState(null)
@@ -32,7 +33,7 @@ function Conta() {
         setLoading(false);
     }, [])
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     const handlerPageSelect = (page: string) => {
         setPageSelect(page);

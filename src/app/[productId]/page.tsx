@@ -11,6 +11,7 @@ import Footer from "@/components/Footer/Footer";
 import {parseCookies} from 'nookies';
 import { useEffect, useState } from "react";
 import { checkToken } from "@/utils/verify-jwt";
+import Loader from "@/components/Loader/page";
 const SecLogo = styled.section`
     height:35vh;
 `
@@ -34,7 +35,7 @@ function ProductDetails(){
         setLoading(false);
     }, [])
     if (loading) {
-        return <div>Carregando...</div>;
+        return <Loader/>;
     }
     return(
         <>
