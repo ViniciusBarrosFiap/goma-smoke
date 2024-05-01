@@ -13,6 +13,7 @@ import './style.scss'
 import NotFound from "@/components/NotFound/page";
 import UserOrders from "@/components/UserOrders/page";
 import Loader from "@/components/Loader/page";
+import UserData from "@/components/userData/page";
 function Conta() {
     const [loggedIn, setLoggedIn] = useState<boolean>(false)
     const [userType, setUserType] = useState(null)
@@ -42,8 +43,9 @@ function Conta() {
     switch (pageSelect) {
         case "Pedidos":
             componentToRender = <UserOrders/>
+            break
         case "Meus dados":
-            // componentToRender = 
+            componentToRender = <UserData/>
             break
     }
 

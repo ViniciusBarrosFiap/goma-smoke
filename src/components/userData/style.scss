@@ -1,0 +1,31 @@
+@import '../../variables';
+.sec-inpus-edits{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .div-input-edit {
+        display: flex;
+        justify-content: center;
+        width: calc(50% - 1rem);
+        align-items: center;
+        padding: 1rem;
+        .btn-act-edit {
+            background: none;
+            border: none;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            box-sizing: border-box;
+            font-size: 17px;
+            cursor: pointer;
+            &:disabled{
+                cursor: default;
+            }
+            &:hover {
+                color: $color-green;
+                &:disabled{
+                    color:white;
+                }
+            }
+        }
+    }
+}

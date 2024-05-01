@@ -41,7 +41,6 @@ function UserOrders() {
         }
         http.get('orders', config)
             .then((res) => {
-                console.log(res.data)
                 setUserOrders(res.data)
             })
             .catch((erro) => {

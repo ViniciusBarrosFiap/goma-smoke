@@ -46,7 +46,6 @@ function FormSignUp() {
             setBirthDay(formatDate(value))
         }
     }
-    console.log(cpf)
     const createUser = () => {
         const userData = {
             "name": name,
@@ -59,8 +58,7 @@ function FormSignUp() {
             "userType": "user"
         }
         http.post('/users', userData)
-        .then((response) => {
-            console.log(response)
+        .then(() => {
             window.location.href = '/conta';
         })
         .catch((error) => {
