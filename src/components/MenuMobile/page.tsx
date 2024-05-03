@@ -2,6 +2,7 @@ import "./style.scss"
 import Link from "next/link"
 import { FaHome, FaList } from "react-icons/fa";
 import { BsTelephonePlusFill } from "react-icons/bs";
+import { MdOutlineAccountCircle } from "react-icons/md";
 
 
 
@@ -31,6 +32,8 @@ function MenuMobile({display, onToggleMenu}:MenuMobileProps){
                             <li><FaList className="svg-options"/><Link href={"/produtos"}>Produtos</Link></li>
                             <div className="separate-line"></div>
                             <li><BsTelephonePlusFill className="svg-options"/><Link href={"/contato"}>Contato</Link></li>
+                            <div className="separate-line"></div>
+                            <li><MdOutlineAccountCircle className="svg-options"/><Link href={"/conta"}>Conta</Link></li>
                         </ul>
                     </div>
                 </div>

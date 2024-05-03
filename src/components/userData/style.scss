@@ -2,30 +2,41 @@
 .sec-inpus-edits{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    .div-input-edit {
-        display: flex;
-        justify-content: center;
-        width: calc(50% - 1rem);
-        align-items: center;
-        padding: 1rem;
-        .btn-act-edit {
-            background: none;
-            border: none;
-            margin-top: 1rem;
-            margin-left: 1rem;
-            box-sizing: border-box;
-            font-size: 17px;
-            cursor: pointer;
-            &:disabled{
-                cursor: default;
-            }
-            &:hover {
-                color: $color-green;
-                &:disabled{
-                    color:white;
-                }
-            }
-        }
-    }
+    justify-content: space-around;
 }
+.puff-in-hor {
+	-webkit-animation: puff-in-hor 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: puff-in-hor 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+}
+@-webkit-keyframes puff-in-hor {
+    0% {
+      -webkit-transform: scaleX(2);
+              transform: scaleX(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes puff-in-hor {
+    0% {
+      -webkit-transform: scaleX(2);
+              transform: scaleX(2);
+      -webkit-filter: blur(4px);
+              filter: blur(4px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }

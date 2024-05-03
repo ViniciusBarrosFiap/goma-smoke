@@ -28,4 +28,7 @@
     &.orange{
         @include gradient-button($color-grey, $color-orange);
     }
+    &.margin-1rem {
+        margin-top: 1rem;
+    }
 }

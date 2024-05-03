@@ -1,13 +1,13 @@
 // import "./style.scss";
 import { useEffect, useState } from 'react';
 import './style.css'
-interface InputFormProps{
+export interface InputFormProps{
     label:string,
     type:string,
     name?:string,
     isDisable?: boolean,
     value?: string;
-    onBlur:  React.ChangeEventHandler<HTMLInputElement> 
+    onBlur?:  React.ChangeEventHandler<HTMLInputElement> 
 }
 
 function InputForm({label, type, name, onBlur, isDisable, value}: InputFormProps){

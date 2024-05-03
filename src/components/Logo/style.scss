@@ -1,25 +1,25 @@
 @import '../../variables';
-.secLogo{
-    height: 35vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.secLogo {
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.div-logo{
-    display: flex;
-    align-items: center;
-    filter: drop-shadow(10px 5px 10px $color-green);
-}
-
-.div-logo--Top15{
-    top:15%
+.div-logo {
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(10px 5px 10px $color-green);
 }
 
-.div-logo--Mobile{
-    img{
-        @media(max-width:500px){
-            width:270px;
-            height: 160px
-        }
+.div-logo--Top15 {
+  top: 15%;
+}
+
+.div-logo--Mobile {
+  img {
+    @media (max-width: 500px) {
+      width: 270px;
+      height: 160px;
     }
+  }
 }
