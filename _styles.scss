@@ -5,5 +5,12 @@
     justify-content: center;
     .container-content{
         width: 85%;
+        overflow-x: scroll;
+
     }
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
 }
