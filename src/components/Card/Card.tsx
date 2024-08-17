@@ -1,16 +1,9 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import "./style.scss"
 import { ProductDB } from "../SectionProducts/SectionProducts";
-// interface CardProps {
-//     id: string,
-//     image: {
-//         url: string
-//     },
-//     name: string,
-//     description: string,
-//     price: number;
-// }
+// import Swal from "sweetalert2";
+import { addCart } from "@/utils/cartUtils";
 function Card(product: ProductDB) {
     const imageUrl = typeof product.images === 'string' ? product.images : '';
     const imageUrlWithoutParams = imageUrl.split('?')[0];
@@ -31,7 +24,10 @@ function Card(product: ProductDB) {
                         <p className="info-product">{product.description}</p>
                         <h2 className="info-product">R$ {product.price}</h2>
                     </div>
-                    <button>Comprar</button>
+                    <div className="div-btns">
+                        <button className="button-buy">Comprar</button>
+                        <button className="button-cart" onClick={()=>addCart(product)}>+ Carinho</button>
+                    </div>
                 </div>
             </Link>
         </div>

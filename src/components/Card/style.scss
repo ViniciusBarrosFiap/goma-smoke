@@ -1,18 +1,44 @@
-@import "../../variables";
+@import '../../variables';
 
+.button-base {
+  margin-top: 1rem;
+  border: none;
+  width: 45%;
+  padding: 0.5rem;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+.button-buy{
+  @extend .button-base;
+  background-color: $color-green;
+  &:hover {
+    box-shadow: 0px 0px 9.5px 7px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.button-cart{
+  @extend .button-base;
+  background-color: $color-orange;
+  &:hover {
+    box-shadow: 0px 0px 9.5px 7px rgba(0, 0, 0, 0.25);
+  }
+
+}
 
 .card-product {
   // width: 20%;
   margin: 0 10px 7rem;
   display: flex;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
   transform: scale(1);
-  a{
+  a {
     text-decoration: none;
   }
 
-  &:hover{
+  &:hover {
     transform: scale(1.1);
   }
   .div-img {
@@ -24,7 +50,7 @@
       margin: -7rem 0px -2rem 0px;
     }
   }
-  .div-infos{
+  .div-infos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,26 +61,14 @@
     font-size: 14px;
     color: black;
     box-shadow: 0px 0px 9.5px 7px rgba(0, 0, 0, 0.25);
-    
-    button{
-        margin-top:1rem;
-        border: none;
-        background-color: $color-green;
-        width: 50%;
-        padding: 0.4rem;
-        border-radius: 20px;
-        color: white;
-        cursor: pointer;
-        font-weight: bold;
-    
-        &:hover{
-            background-color: $color-orange;
-        }
+    .div-btns {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
     }
-    .info-product{
-        margin-top: 0.5rem;
-        text-align: center;
+    .info-product {
+      margin-top: 0.5rem;
+      text-align: center;
     }
-
-  }  
+  }
 }

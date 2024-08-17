@@ -3,9 +3,9 @@ import "./style.scss"
 import { MdExpandMore } from "react-icons/md";
 
 interface AccordionProps{
-    title: string,
-    description: string,
-    titleForDescription: string
+    title?: string,
+    description?: string,
+    titleForDescription?: string
    
 }
 function Accordion({title, description, titleForDescription}:AccordionProps){

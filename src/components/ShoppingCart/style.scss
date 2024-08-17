@@ -2,24 +2,107 @@
 .none{
     display: none;
 }
+@mixin gradient-button($color1, $color2){
+  background-image: linear-gradient(45deg, $color1 50%, $color2 50%);
+  background-position: 25%;
+  background-size: 400%;
+  -webkit-transition: background 500ms ease-in-out, color 500ms ease-in-out;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out;
+  &:hover {
+      color: #ffffff;
+      background-position: 100%;
+  }
+  
+}
 .cart{
     height: 100vh;
     width: 20rem;
     position: fixed;
     right: 0;
     top: 0;
-    background: $color-lightGrey;
+    background: $color-grey;
     z-index: 1000;
+    padding: 0.5rem;
     border-top-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     @media(max-width:500px){
       width: 15rem;
     }
-    svg{
-        color: black;
+    .close-cart{
+        color: $color-orange;
         cursor: pointer;
         font-size: 40px;
         margin: 1rem 0rem 0rem 1rem;
     }
+    li{
+      list-style: none;
+      a{
+        color: black;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        border: 1px solid black;
+        border-radius: 15px;
+        margin-top: 1rem;
+        cursor: pointer;
+        background-color: $color-lightGrey;
+        &:hover{
+          background-color: $color-green;
+        }
+        img{
+          width: 50px;
+          height: 50px;
+          margin-right: 0.5rem;
+        }
+        .div-itemsCart{
+          width: 100%;
+        }
+        .info-items{
+          display: flex;
+          width: 80%;
+          justify-content: space-between;
+          p{
+            font-size: 15px;
+          }
+        }
+        .remove-icon{
+          color: $color-orange;
+          font-size: 25px;
+        }
+
+      }
+    }
+    .cart-buttons{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.5rem;
+      width: 100%;
+      margin-top: auto;
+    }
+    .btns-base {
+      padding: 0.5rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+    .continue-shopping{
+      @extend .btns-base;
+      &:hover{
+        background-color: $color-orange;
+      }
+    }
+    .checkout{
+      @extend .btns-base;
+      margin-top: 0.5rem;
+      &:hover{
+        background-color: $color-green;
+      }
+    }
+
+
 }
 
 
